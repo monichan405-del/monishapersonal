@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monisha | Space & Tech Enthusiast</title>
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <!-- CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top, #0b132b, #000000);
+            color: #ffffff;
+            line-height: 1.7;
+        }
+
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+            header h1 {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 3rem;
+                color: #00e5ff;
+                letter-spacing: 2px;
+            }
+
+
+            header p {
+                margin-top: 15px;
+                font-size: 1.2rem;
+                opacity: 0.9;
+            }
+
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            padding: 12px 0;
+            z-index: 1000;
+        }
+
+
+            nav a {
+                color: #ffffff;
+                margin: 0 15px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+
+                nav a:hover {
+                    color: #00e5ff;
+                }
+
+
+        section {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+            section h2 {
+                font-family: 'Orbitron', sans-serif;
+                color: #00e5ff;
+                margin-bottom: 20px;
+                font-size: 2rem;
+            }
+
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+
+        .card {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 25px;
+            border-radius: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 229, 255, 0.3);
+            }
+
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#space">Space</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+
+    <header id="home">
+        <div>
+            <h1>Hello, I'm Monisha</h1>
+            <p>BCA Student • Web Developer • Space Enthusiast 🚀</p>
+        </div>
+    </header>
+
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a Bachelor of Computer Applications (BCA) student passionate about technology,
+            web development, and data-driven problem solving. I love building modern websites
+            and exploring how technology connects with space science.
+        </p>
+    </section>
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="cards">
+            <div class="card">HTML5 & Semantic Web</div>
+            <div class="card">CSS3 & Modern UI Design</div>
+            <div class="card">JavaScript Basics</div>
+            <div class="card">Data Analytics Foundations</div>
+        </div>
+    </section>
+
+
+    <section id="space">
+        <h2>Why I Love Space</h2>
+        <p>
+            Space represents curiosity, exploration, and infinite possibilities. From galaxies
+            billions of light-years away to advanced space missions, studying space helps us
+            understand the universe and pushes technological innovation on Earth.
+        </p>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>
+            Email: <strong>monmichan405@email.com</strong><br>
+            GitHub: <strong>monisha.github.io</strong>
+            instagram id: @psychic_x_girl_
+        </p>
+    </section>
+
+
+    <footer>
+        © 2026 Monisha • Designed with passion for space 🌌
+    </footer>
+
+
+</body>
+</html>
