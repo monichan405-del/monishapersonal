@@ -1,194 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Monisha | Space & Tech Enthusiast</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Monisha | Portfolio</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-    <!-- CSS -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body{
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+background:#050505;
+color:#fff;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle at top, #0b132b, #000000);
-            color: #ffffff;
-            line-height: 1.7;
-        }
+/* 🌌 subtle background */
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+background-size:4px 4px;
+z-index:-3;
+}
 
+/* 🪐 canvas */
+#planet{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-2;
+opacity:0.5;
+}
 
-        header {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
+/* 📦 slider */
+.slider{
+display:flex;
+width:500vw;
+height:100vh;
+transition:transform 1s ease;
+}
 
+.slide{
+width:100vw;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+}
 
-            header h1 {
-                font-family: 'Orbitron', sans-serif;
-                font-size: 3rem;
-                color: #00e5ff;
-                letter-spacing: 2px;
-            }
+/* 💎 glass */
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border-radius:20px;
+padding:40px;
+box-shadow:0 0 30px rgba(255,0,0,0.2);
+animation:fadeIn 1s ease;
+}
 
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
 
-            header p {
-                margin-top: 15px;
-                font-size: 1.2rem;
-                opacity: 0.9;
-            }
+/* ❤️ text */
+h1{
+font-family:'Orbitron';
+font-size:3rem;
+color:#ff2e2e;
+text-shadow:0 0 10px rgba(255,0,0,0.5);
+}
 
+h2{
+color:#ff2e2e;
+margin-bottom:15px;
+}
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: center;
-            padding: 12px 0;
-            z-index: 1000;
-        }
+/* ⚡ skills */
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+margin-top:20px;
+}
 
+.skill{
+padding:12px;
+border-radius:10px;
+background:rgba(255,255,255,0.05);
+transition:0.3s;
+}
 
-            nav a {
-                color: #ffffff;
-                margin: 0 15px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: color 0.3s;
-            }
+.skill:hover{
+transform:translateY(-5px);
+box-shadow:0 0 10px rgba(255,0,0,0.4);
+}
 
+/* 🚀 projects */
+.project{
+margin:10px 0;
+padding:10px;
+border-left:3px solid #ff2e2e;
+}
 
-                nav a:hover {
-                    color: #00e5ff;
-                }
-
-
-        section {
-            max-width: 1000px;
-            margin: 80px auto;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-        }
-
-            section h2 {
-                font-family: 'Orbitron', sans-serif;
-                color: #00e5ff;
-                margin-bottom: 20px;
-                font-size: 2rem;
-            }
-
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-
-        .card {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 25px;
-            border-radius: 16px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-            .card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 15px 30px rgba(0, 229, 255, 0.3);
-            }
-
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+/* footer */
+footer{
+margin-top:20px;
+opacity:0.6;
+font-size:0.8rem;
+}
+</style>
 </head>
+
 <body>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#space">Space</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
+<canvas id="planet"></canvas>
 
-    <header id="home">
-        <div>
-            <h1>Hello, I'm Monisha</h1>
-            <p>BCA Student • Web Developer • Space Enthusiast 🚀</p>
-        </div>
-    </header>
+<div class="slider" id="slider">
 
+<!-- 👤 INTRO -->
+<section class="slide">
+<div class="glass">
+<h1>Monisha 🚀</h1>
+<p>🌌• Space Enthusiast🌌</p>
+<p style="margin-top:10px">Welcome to my universe 🌌</p>
+</div>
+</section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a Bachelor of Computer Applications (BCA) student passionate about technology,
-            web development, and data-driven problem solving. I love building modern websites
-            and exploring how technology connects with space science.
-        </p>
-    </section>
-    <section id="skills">
-        <h2>My Skills</h2>
-        <div class="cards">
-            <div class="card">HTML5 & Semantic Web</div>
-            <div class="card">CSS3 & Modern UI Design</div>
-            <div class="card">JavaScript Basics</div>
-            <div class="card">Data Analytics Foundations</div>
-        </div>
-    </section>
+<!-- 🧠 ABOUT -->
+<section class="slide">
+<div class="glass">
+<h2>About Me</h2>
+<p>I build modern web apps, AI systems and love exploring space technology.</p>
+</div>
+</section>
 
+<!-- ⚡ SKILLS -->
+<section class="slide">
+<div class="glass">
+<h2>Skills</h2>
+<div class="skills">
+<div class="skill">HTML5</div>
+<div class="skill">CSS3</div>
+<div class="skill">JavaScript</div>
+<div class="skill">React</div>
+<div class="skill">Next.js</div>
+<div class="skill">Python</div>
+<div class="skill">FastAPI</div>
+<div class="skill">UI/UX Design</div>
+<div class="skill">data analyst</div>
+</div>
+</div>
+</section>
 
-    <section id="space">
-        <h2>Why I Love Space</h2>
-        <p>
-            Space represents curiosity, exploration, and infinite possibilities. From galaxies
-            billions of light-years away to advanced space missions, studying space helps us
-            understand the universe and pushes technological innovation on Earth.
-        </p>
-    </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>
-            Email: <strong>monichan405@gmail.com</strong><br>
-            GitHub: <strong>monisha.github.io</strong>
-            instagram id: @psychic_x_girl_
-        </p>
-    </section>
+<!-- 🚀 PROJECTS -->
+<section class="slide">
+<div class="glass">
+<h2>Projects</h2>
+<div class="project">🏫 TutorConnect</div>
+<div class="project">🤖 Felix AI Assistant</div>
+</div>
+</section>
 
+<!-- 🪐 PLANET -->
+<section class="slide">
+<div class="glass">
+<h2>Explore My Universe</h2>
+<p>🌍</p>
+<footer>© 2026 Monisha ❤️</footer>
+</div>
+</section>
 
-    <footer>
-        © 2026 Monisha • Designed with passion for space 🌌
-    </footer>
+</div>
 
+<script>
+let index=0;
+const slider=document.getElementById("slider");
+
+// ⏳ AUTO SLIDE
+setInterval(()=>{
+index++;
+if(index>4) index=0;
+slider.style.transform=`translateX(-${index*100}vw)`;
+},10000);
+
+// 🖱️ SCROLL
+window.addEventListener("wheel",(e)=>{
+if(e.deltaY>0) index++;
+else index--;
+index=Math.max(0,Math.min(index,4));
+slider.style.transform=`translateX(-${index*100}vw)`;
+});
+
+// 🪐 PLANET
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+
+const renderer=new THREE.WebGLRenderer({
+canvas:document.getElementById("planet"),
+alpha:true
+});
+renderer.setSize(window.innerWidth,window.innerHeight);
+
+const geometry=new THREE.SphereGeometry(2,32,32);
+const texture=new THREE.TextureLoader().load(
+"https://threejsfundamentals.org/threejs/resources/images/earth.jpg"
+);
+
+const material=new THREE.MeshStandardMaterial({map:texture});
+const planet=new THREE.Mesh(geometry,material);
+scene.add(planet);
+
+const light=new THREE.PointLight(0xffffff,1);
+light.position.set(5,5,5);
+scene.add(light);
+
+camera.position.z=5;
+
+// mouse interaction
+document.addEventListener("mousemove",(e)=>{
+const x=(e.clientX/window.innerWidth)-0.5;
+const y=(e.clientY/window.innerHeight)-0.5;
+planet.rotation.y = x * 2;
+planet.rotation.x = y * 2;
+});
+
+// animation
+function animate(){
+requestAnimationFrame(animate);
+planet.rotation.y += 0.002;
+renderer.render(scene,camera);
+}
+animate();
+</script>
 
 </body>
 </html>
